@@ -1,16 +1,13 @@
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import { Inter } from "next/font/google";
+import styles from "@/styles/Home.module.css";
+import MyLayout from "./components/layout";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
     <>
-      <main className={`${styles.main} ${inter.className}`}>
-        <div className={styles.description}>
-          <h1 className="text-6xl font-bold underline">Ivan</h1>
-        </div>
-      </main>
+      <MyLayout title="Dashboard"></MyLayout>
     </>
-  )
+  );
 }
