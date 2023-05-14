@@ -9,9 +9,9 @@ export default function MyLayout() {
       <nav className="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link href="/" className="flex items-center">
-            <Image src="/dashboard.jpg" alt="/" width="64" height="64" />
+            <Image src="/publisher.jpg" alt="/" width="64" height="64" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-              Dashboard
+              Publisher Dashboard
             </span>
           </Link>
 
@@ -46,4 +46,11 @@ export default function MyLayout() {
       <main></main>
     </>
   );
+}
+export async function getServerSideProps() {
+  const response = await axios.get("http://localhost:3000/publisher");
+  const data = await response.data;
+  console.log(data);
+
+  return { props: { data } };
 }
